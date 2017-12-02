@@ -1,0 +1,35 @@
+.target-text {
+  /*position: relative;*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  &__title {
+    font-weight: 300;
+    color: #2f5572;
+    font-size: 3rem;
+  }
+  &__subtitle {
+    font-weight: 100;
+    color: #FFF;
+    font-size: 1.875rem;
+  }
+
+}
+
+/*
+.target-text__title {
+  font-weight: 300;
+  color: #2f5572;
+  font-size: 3rem;
+}
+
+.target-text__subtitle {
+  font-weight: 50;
+  color: #2f5572;
+  font-size: 1.5rem;
+}
+*/
