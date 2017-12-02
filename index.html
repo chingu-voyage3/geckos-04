@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+  <title>Single Page App Place Holder</title>
+
+  <link rel="stylesheet" media="all" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" media="all" href="assets/css/index.css" />
+  <script src="assets/js/ui-bootstrap-tpls.min.js"></script>
+  <script src="assets/js/angular.min.js"></script>
+  <script src="assets/js/index.js"></script>
+</head>
+
+<body>
+<div class="container-fluid" ng-app="app" ng-controller="mainController">
+
+  <nav class="navbar navbar-dark fixed-top bg-dark">
+    <span class="navbar-brand">A spot for topbar navigation</span>
+    <div class="row justify-content-end">
+      <a class="nav-link active text-light" ng-click="select('bio')" href="#">Expands a detail</a>
+      <a class="nav-link active text-light" ng-show="showDetail" ng-click="overview()" href="#">List things</a>
+    </div>
+  </nav>
+
+  <!-- Body -->
+  <div ng-switch="showDetail" class="container">
+    <div class="card card-body bg-secondary" ng-switch-when="false">
+      <!-- Overview -->
+      <div ng-repeat="(key, x) in sample ">
+        <div ng-show="x.header">
+        <h1 class="card-title text-light">{{ x.header }}</h1>
+        <p class="card-text text-light">
+        <a class="nav-link text-light" ng-click="select('{{ key }}')" href="#" id="whatsInYourFood"><i class="fa fa-info-circle text-primary"></i>&nbsp;{{ x.subheader }}
+         </a></p>
+         </div>
+      </div>
+    </div>
+
+    <div class="card card-body bg-secondary" ng-switch-when="true">
+    <!-- Detail -->
+      <h1 class="card-title text-light">
+      <div class="card-close bg-primary">
+        <i class="fa fa-step-backward text-light" aria-hidden="true" ng-show="current.header" ng-click="next(-1)"></i>
+        <i class="fa fa-window-close-o text-light" aria-hidden="true" ng-click="overview()"></i>
+        <i class="fa fa-step-forward text-light" aria-hidden="true" ng-show="current.header" ng-click="next(1)"></i>
+      </div>
+      {{ current.title }}</h1>
+
+      <p class="card-text text-light">
+        {{ current.description }}
+        <ul ng-show="current.foundlist">
+          <li class="text-light" ng-repeat="x in current.foundlist">{{ x }}</li>
+        </ul>
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body></html>
