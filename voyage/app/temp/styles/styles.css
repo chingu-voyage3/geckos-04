@@ -1,15 +1,4 @@
 /*@import "modules/_large-hero";*/
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #333
-}
-/*
-Roboto
-img {
-  max-width: 100%;
-  height: 100%;
-}
-*/
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -369,15 +358,25 @@ template {
   display: none;
 }
 .splash > img {
-  width: 100%;
-  heght: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  /*
+  stretch the image to fill the screen.
+  Comment the single line below to reveal Forcast and settings text
+  for more info: https://css-tricks.com/perfect-full-page-background-image/
+  */
+  top: 0;
+  position: fixed;
+  left: 0;
+
+  min-width: 100%; //preserve aspect ratio
+  min-height: 100%;
+  /*
   padding: 0;
   margin: 0;
   border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  object-fit: cover;
+  background-image: url('./app/assets/images/voyage.jpg');
+  box-sizing: border-box;
+  */
 }
 /*
 .large {
@@ -406,12 +405,38 @@ template {
 .target-text__title {
     font-weight: 300;
     color: #2f5572;
-    font-size: 3rem;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+@media (min-width: 530px){
+.target-text__title {
+      font-size: 1.6rem
+  }
+
+  }
+@media (min-width: 800px){
+.target-text__title {
+      font-size: 2.4rem
+  }
+
+  }
+@media (min-width: 1200px){
+.target-text__title {
+      font-size: 4rem
+  }
+
   }
 .target-text__subtitle {
     font-weight: 100;
     color: #FFF;
-    font-size: 1.875rem;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+@media (min-width: 530px){
+.target-text__subtitle {
+      font-size: 2.9rem
+  }
+
   }
 /*
 .target-text__title {
@@ -424,5 +449,16 @@ template {
   font-weight: 50;
   color: #2f5572;
   font-size: 1.5rem;
+}
+*/
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333
+}
+/*
+Roboto
+img {
+  max-width: 100%;
+  height: 100%;
 }
 */
