@@ -1,6 +1,10 @@
 /*@import "modules/_large-hero";*/
 @import "normalize.css";
 @import "base/_mixins";
+<<<<<<< HEAD
 @import "modules/_splash.css";
+=======
+/*@import "modules/_splash.css";*/
+>>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
 @import "modules/_target-text.css";
 @import "base/_global";

@@ -22,12 +22,19 @@ trigger the cssInject task*/
   watch('./app/assets/styles/**/*.css', function() {
     gulp.start('cssInject');
   });
+  watch('./app/assets/scripts/**/*js', function() {
+    gulp.start('scriptsRefresh');
+  })
 });
 
 /*cssInject task requires 'STYLES' task as a dependency inside an array
 browserSync.stream() method automatically refreshes the browser with any changes
 made to styles.css*/
-gulp.task('cssInject', ['styles'],function() {
+gulp.task('cssInject', ['styles'], function() {
   return gulp.src('./app/temp/styles/styles.css')
     .pipe(browserSync.stream());
-})
+});
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
+});
