@@ -1,0 +1,36 @@
+.splash > img {
+  /*
+  stretch the image to fill the screen.
+  Comment the single line below to reveal Forcast and settings text
+  for more info: https://css-tricks.com/perfect-full-page-background-image/
+  */
+  top: 0;
+  position: fixed;
+  left: 0;
+
+  min-width: 100%; //preserve aspect ratio
+  min-height: 100%;
+  /*
+  padding: 0;
+  margin: 0;
+  border: 0;
+  object-fit: cover;
+  background-image: url('./app/assets/images/voyage.jpg');
+  box-sizing: border-box;
+  */
+}
+
+
+/*
+.large {
+  position: relative;
+}
+
+.large-hero__text-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+*/
