@@ -1,6 +1,6 @@
 .splash > img {
   /*
-<<<<<<< HEAD
+
   stretch the image to fill the screen.
   Comment the single line below to reveal Forcast and settings text
   for more info: https://css-tricks.com/perfect-full-page-background-image/
@@ -11,7 +11,7 @@
 
   min-width: 100%; //preserve aspect ratio
   min-height: 100%;
-=======
+
   //stretch the image to fill the screen.
   //Comment the single line below to reveal Forcast and settings text
   //for more info: https://css-tricks.com/perfect-full-page-background-image
@@ -26,7 +26,6 @@
 
 
 
->>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
   /*
   padding: 0;
   margin: 0;
@@ -38,12 +37,6 @@
 }
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
 /*
 .large {
   position: relative;

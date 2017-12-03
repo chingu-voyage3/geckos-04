@@ -357,7 +357,6 @@ template {
 [hidden] {
   display: none;
 }
-<<<<<<< HEAD
 .splash > img {
   /*
   stretch the image to fill the screen.
@@ -392,9 +391,8 @@ template {
   text-align: center;
 }
 */
-=======
 /*@import "modules/_splash.css";*/
->>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
+
 .target-text {
   /*position: relative;*/
   position: absolute;
@@ -457,9 +455,6 @@ template {
 */
 body {
   font-family: 'Roboto', sans-serif;
-<<<<<<< HEAD
-  color: #333
-=======
   color: #333;
 
   background-image: url(../../assets/images/voyage.jpg);
@@ -468,7 +463,6 @@ body {
   background-attachment: fixed;
   background-size:  cover;
 
->>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
 }
 /*
 Roboto

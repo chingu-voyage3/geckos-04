@@ -1,8 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-<<<<<<< HEAD
-  color: #333
-=======
+
   color: #333;
 
   background-image: url(../../assets/images/voyage.jpg);
@@ -11,7 +9,7 @@ body {
   background-attachment: fixed;
   background-size:  cover;
 
->>>>>>> 90a843a663aad610e3cd89c6376b72a403273dbd
+
 }
 /*
 Roboto
