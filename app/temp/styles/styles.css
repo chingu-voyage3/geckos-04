@@ -359,19 +359,44 @@ template {
 }
 /*@import "modules/_splash.css";*/
 .target-text {
-  /*position: relative;*/
+  /*position: relative;
+  1rem = 16 pixels for most browsers*/
   position: absolute;
-  top: 50%;
+  top: 53%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 0;
   width: 100%;
   text-align: center;
-
 }
+.target-text__time {
+    font-weight: 500;
+    color: white;
+    margin: 0;
+    font-size: 3rem;
+    line-height: 280%;
+  }
+@media (min-width: 530px){
+.target-text__time {
+      font-size: 4rem
+  }
+
+  }
+@media (min-width: 800px){
+.target-text__time {
+      font-size: 6rem
+  }
+
+  }
+@media (min-width: 1200px){
+.target-text__time {
+      font-size: 14rem
+  }
+
+  }
 .target-text__title {
-    font-weight: 300;
-    color: #2f5572;
+    font-weight: 100;
+    color: white;
     margin: 0;
     font-size: 0.8rem;
   }
@@ -389,19 +414,31 @@ template {
   }
 @media (min-width: 1200px){
 .target-text__title {
-      font-size: 4rem
+      font-size: 2.8rem
   }
 
   }
 .target-text__subtitle {
-    font-weight: 100;
-    color: #FFF;
-    font-size: 1.1rem;
+    font-weight: normal;
+    color: white;
+    font-size: 0.8rem;
     margin: 0;
   }
 @media (min-width: 530px){
 .target-text__subtitle {
-      font-size: 2.9rem
+      font-size: 1rem
+  }
+
+  }
+@media (min-width: 800px){
+.target-text__subtitle {
+      font-size: 1.5rem
+  }
+
+  }
+@media (min-width: 1200px){
+.target-text__subtitle {
+      font-size: 1.8rem
   }
 
   }

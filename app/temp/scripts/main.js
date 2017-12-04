@@ -109,11 +109,16 @@ function Person(name, favColour) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_time__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_startTime__ = __webpack_require__(4);
 
-//var time = require('./modules/time');
+//var time = require('./modules/time')  ;
 
-var current_time = new __WEBPACK_IMPORTED_MODULE_0__modules_time__["a" /* default */]();
+function display_time() {
+  document.getElementById('time').innerHTML = Object(__WEBPACK_IMPORTED_MODULE_0__modules_startTime__["a" /* default */])();
+  var recursion = setTimeout(display_time, 500); //500 == 0.5s
+}
+
+var Time = new display_time();
 
 
 /***/ }),
@@ -126,9 +131,14 @@ function startTime() {
       hour  = today.getHours(),
       minute = today.getMinutes(),
       seconds = today.getSeconds();
+
       //$('#time').text(hour + ":" +minute);
-  console.log(hour+":"+minute+":"+seconds);
-  return (hour + ":" + minute);
+  //console.log(hour+":"+minute+":"+seconds);
+  hour = ('0' + hour).slice(-2);
+  minute = ('0' + minute).slice(-2);
+  var time = hour + ":" + minute; //+ ":" + seconds;
+  //this.time = time;
+  return time
 }
 /* harmony default export */ __webpack_exports__["a"] = (startTime);
 
