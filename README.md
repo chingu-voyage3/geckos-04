@@ -3,7 +3,9 @@
 ## Development Environment
 
 Load Nodejs<br>
-Load Angular-CLI [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+Load Angular-CLI [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.<br>
+Create a new geckos-04 app and then git pull into that.<br>
+The repository does not have the development environment files.
 
 ## Development server
 
