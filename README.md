@@ -5,6 +5,9 @@
 Load Nodejs<br>
 Load Angular-CLI: npm install -g @angular/cli<br>
     [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.<br>
+Clone this repository and run `npm i` in the project root and npm will resolve and fetch all of the necessary packages for you to run the app. <br>
+The repository does not have the development environment files.
+
 Load MomentJs: npm install moment-timezone --save<br>
 Create a new geckos-04 app and then git pull into geckos-04.<br>
 The repository does not have the development environment files.

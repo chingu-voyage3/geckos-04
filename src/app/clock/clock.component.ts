@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//import { ClockService } from "./clock.service";
 import * as moment from 'moment';
 
 @Component({
@@ -6,13 +7,15 @@ import * as moment from 'moment';
   templateUrl: './clock.component.html',
   styleUrls: ['./clock.component.css']
 })
-export class ClockComponent implements OnInit {
+export class Clock {
 
-  thisTime = moment("2014-06-01T12:00:00Z");
-  //Date.now();
+  thisTime: Date;
 
-  constructor() {}
+  //constructor(private clockService: ClockService) {
+  //}
 
-  ngOnInit() {}
+  ngOnInit() {
+    //this.clockService.getClock().subscribe(time => this.time = time);
+  }
 
 }
