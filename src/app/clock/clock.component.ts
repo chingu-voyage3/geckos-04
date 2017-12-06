@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-clock',
@@ -7,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockComponent implements OnInit {
 
-  thisTime = Date.now();
-  //moment("2014-06-01T12:00:00Z");
+  thisTime = moment("2014-06-01T12:00:00Z");
+  //Date.now();
 
   constructor() {}
 
