@@ -3,8 +3,10 @@
 ## Development Environment
 
 Load Nodejs<br>
-Load Angular-CLI [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.<br>
-Create a new geckos-04 app and then git pull into that.<br>
+Load Angular-CLI: npm install -g @angular/cli<br>
+    [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.<br>
+Load MomentJs: npm install moment-timezone --save<br>
+Create a new geckos-04 app and then git pull into geckos-04.<br>
 The repository does not have the development environment files.
 
 ## Development server
@@ -28,3 +30,7 @@ You can also use `ng generate directive|pipe|service|class|guard|interface|enum|
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Solutions
+
+[Angular-CLI Stories](https://github.com/angular/angular-cli/wiki/stories)
