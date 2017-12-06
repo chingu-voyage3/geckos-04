@@ -2,7 +2,7 @@
 
 ## Development Environment
 
-Load Nodejs
+Load Nodejs<br>
 Load Angular-CLI [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
 ## Development server
