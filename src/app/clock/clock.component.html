@@ -1,5 +1,5 @@
 <div class="display">
-  {{ myDate | date:'HH:mm:ss' }}
+  {{ myDate | date: myFormat }}<br>
   <input type="button" value="Change Clock Format" (click)="cycleClockFormat()">
 </div>
 
@@ -11,6 +11,7 @@ Shows cookies used by the settings service
 <ul *ngFor="let cookie of keys">
   <li><strong>{{cookie}}</strong>: {{cookies[cookie]}}</li>
 </ul>
+*These are initial load values, they do not change while the app is running
 </div>
 <!--
 <table>

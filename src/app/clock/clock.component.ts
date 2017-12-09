@@ -10,7 +10,7 @@ import { CookieService } from 'ng2-cookies';
 })
 export class ClockComponent implements OnInit {
   myDate: Date;
-  myFormat: String;
+  myFormat: string;
   cookies: Object;
   keys: Array<string>;
 
@@ -27,12 +27,11 @@ export class ClockComponent implements OnInit {
   update() {
     this.cookies = this.cookieService.getAll();
     this.keys = Object.keys(this.cookies);
-    this.cookieService.delete('format');
 
     //first time run, set cookie data for this component to default
     if (!(this.cookieService.check('clockFormat'))) {
-      this.cookieService.set('clockFormat', "12hrDigital");
-      this.myFormat = "12hrDigital";
+      this.myFormat = 'h:mm a EEEE, MMMM d';
+      this.cookieService.set('clockFormat', this.myFormat);
     }
     if (!(this.cookieService.check('appCity'))) {
       this.cookieService.set('appCity', 'local');
@@ -40,12 +39,27 @@ export class ClockComponent implements OnInit {
   }
 
   cycleClockFormat(){
-    //using a swtich statemet vs an array for readability
-    switch (this.myFormat) {
-      case "12hrDigital": this.myFormat = "24hrDigital"; break;
-      case "24hrDigital": this.myFormat = "12hrDigital"; break;
-    }
-    console.log("responding " + this.myFormat);
+    //date pipe format refrence:
+    //  https://angular.io/api/common/DatePipe#datepipe
+    var formats = [
+    'MMM d, y, h:mm:ss a', //Jun 15, 2015, 9:03:01 AM
+    'MMM d, y, HH:mm:ss',  //Jun 15, 2015, 09:03:01 - 24hr time
+    'M/d/yy, h:mm a',      //6/15/15, 9:03 AM
+    'M/d/yy, HH:mm',       //6/15/15, 9:03 - 24hr time
+    'EEEE, MMMM d, y',     //Monday, June 15, 2015
+    'h:mm a EEEE, MMMM d', //9:03 AM Monday, June 15
+    'HH:mm EEEE, MMMM d',  //9:03 Monday, June 15 - 24hr time
+    'h:mm:ss a',           //9:03:01 AM
+    'HH:mm:ss',            //09:03:01 - 24hr time
+    'h:mm a',              //9:03 AM
+    'HH:mm',               //09:03 - 24hr time
+    ]
+    var next = formats.indexOf(this.myFormat) + 1;
+    if (next >= formats.length) {next = 0}
+    this.myFormat = formats[next];
+
+    this.cookieService.set('clockFormat', this.myFormat);
+    // console.log("responding " + this.myFormat);
   }
 
 }
