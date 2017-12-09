@@ -31,7 +31,7 @@ export class ClockComponent implements OnInit {
 
     //first time run, set cookie data for this component to default
     if (!(this.cookieService.check('clockFormat'))) {
-      this.cookieService.set('clockFormat', '12hrDigital');
+      this.cookieService.set('clockFormat', "12hrDigital");
       this.myFormat = "12hrDigital";
     }
     if (!(this.cookieService.check('appCity'))) {
@@ -40,9 +40,14 @@ export class ClockComponent implements OnInit {
   }
 
   cycleClockFormat(){
+    //using a swtich statemet vs an array for readability
+    switch (this.myFormat) {
+      case "12hrDigital": this.myFormat = "24hrDigital"; break;
+      case "24hrDigital": this.myFormat = "12hrDigital"; break;
+    }
     console.log("responding " + this.myFormat);
   }
-  
+
 }
 
 
