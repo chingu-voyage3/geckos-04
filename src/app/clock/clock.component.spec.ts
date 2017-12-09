@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ClockComponent } from './clock.component';
+import { ClockService } from "../clock.service";
 
 describe('ClockComponent', () => {
   let component: ClockComponent;

@@ -15,3 +15,8 @@ export class ClockService {
   }
 
 }
+
+
+//refrence:
+//https://codereview.stackexchange.com/questions/155944/angular-2-clock-with-rxjs-observable
+// This service provides a date object every second based on the interval (1000)
