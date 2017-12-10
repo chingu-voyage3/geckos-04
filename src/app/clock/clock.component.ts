@@ -11,6 +11,7 @@ import { CookieService } from 'ng2-cookies';
 export class ClockComponent implements OnInit {
   myDate: Date;
   myFormat: string;
+  myTimezone: string;
   cookies: Object;
   keys: Array<string>;
 
@@ -20,8 +21,8 @@ export class ClockComponent implements OnInit {
 
   ngOnInit() {
     this.clockService.getClock().subscribe(myDate => this.myDate = myDate);
-
     this.myFormat = this.cookieService.get('clockFormat');
+    this.myTimezone = this.cookieService.get('timezone');
   }
 
   update() {
@@ -33,8 +34,10 @@ export class ClockComponent implements OnInit {
       this.myFormat = 'h:mm a EEEE, MMMM d';
       this.cookieService.set('clockFormat', this.myFormat);
     }
-    if (!(this.cookieService.check('appCity'))) {
-      this.cookieService.set('appCity', 'local');
+    // this.cookieService.delete('timezone')
+    if (!(this.cookieService.check('timezone'))) {
+      this.myTimezone = `${new Date().getHours() - new Date().getUTCHours()}`;
+      this.cookieService.set('timezone', this.myTimezone);
     }
   }
 
@@ -53,14 +56,25 @@ export class ClockComponent implements OnInit {
     'HH:mm:ss',            //09:03:01 - 24hr time
     'h:mm a',              //9:03 AM
     'HH:mm',               //09:03 - 24hr time
+    'h:mm a zzzz',          //9:03 AM timezone
+    'EEEE, MMMM d h:mm a zzzz'//Monday, June 15 9:03 AM timezone
     ]
     var next = formats.indexOf(this.myFormat) + 1;
     if (next >= formats.length) {next = 0}
     this.myFormat = formats[next];
 
     this.cookieService.set('clockFormat', this.myFormat);
-    // console.log("responding " + this.myFormat);
   }
+
+  assertTimezone(incomingTimezone: "nil"){
+    var current = parseInt(incomingTimezone);
+    if (incomingTimezone == "nil") {
+      var current = new Date().getHours() - new Date().getUTCHours();
+    }
+    this.myTimezone = `${current}`;
+    this.cookieService.set('timezone', this.myTimezone);
+  }
+
 
 }
 

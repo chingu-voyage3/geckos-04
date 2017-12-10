@@ -1,7 +1,13 @@
+<hr>
 <div class="display">
-  {{ myDate | date: myFormat }}<br>
-  <input type="button" value="Change Clock Format" (click)="cycleClockFormat()">
+  {{ myDate | date: myFormat : myTimezone }}
+  <br><input type="button" value="Change Clock Format" (click)="cycleClockFormat()">
+  <br><input type="button" value="Assert a sample timezone: GMT -0300" (click)="assertTimezone('-0300')">
+  <br><input type="button" value="local timezone" (click)="assertTimezone('nil')">
 </div>
+<hr>
+
+<!-- TODO Remove this crap below after CSS has been added -->
 
 <!-- begin
 HTML for development only
@@ -11,7 +17,8 @@ Shows cookies used by the settings service
 <ul *ngFor="let cookie of keys">
   <li><strong>{{cookie}}</strong>: {{cookies[cookie]}}</li>
 </ul>
-*These are initial load values, they do not change while the app is running
+*These are initial load values, they do not change while the app is running<br>
+This is for refrence, part of the clock.component.html and needs to be purged after CSS is added.
 </div>
 <!--
 <table>
